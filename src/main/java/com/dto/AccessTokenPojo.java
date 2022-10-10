@@ -18,9 +18,9 @@ public class AccessTokenPojo {
 	
 
 //	@Value("${fb.clientId}")
-	private String clientId="1032095120798396";
+	private String clientId;
 //	@Value("$fb.secretCode}")
-	private String secretCode="5b8d230d03662cc5e599353ed31aadf0";
+	private String secretCode;
 
 	@JsonProperty("accesstoken")
 	private String access_token;

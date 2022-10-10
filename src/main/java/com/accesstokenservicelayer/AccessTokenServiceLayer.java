@@ -25,12 +25,13 @@ public class AccessTokenServiceLayer {
 		this.restTemplate = restTemplate;
 	}
 
-	public String consumeAPI(String clientId,String secretCode) throws Exception {
+	public String consumeAPI(String clientId, String secretCode) throws Exception {
 		System.out.println();
-		String accessToken;
-		String response = restTemplate.getForObject(
-				"https://graph.facebook.com/oauth/access_token?client_id=1032095120798396&client_secret=5b8d230d03662cc5e599353ed31aadf0&grant_type=client_credentials",
-				String.class);
+//		String accessToken;
+		String url = "https://graph.facebook.com/oauth/access_token?client_id=" + clientId + "&client_secret="
+				+ secretCode + "&grant_type=client_credentials";
+
+		String response = restTemplate.getForObject(url, String.class);
 
 		// System.out.println(response);
 		ObjectMapper mapper = new ObjectMapper();
